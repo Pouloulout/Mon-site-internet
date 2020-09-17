@@ -5,12 +5,38 @@
 <link rel="stylesheet" href="style2.css" />
 </head>
 
+<nav>
+	<ul><li><a href="#">On va parler ici du CSS</a></li>
+	<li><a href="#">Colorer un titre ou un paragrâphe en bleue (ou autre...)</a></li>
+	<li><a href="#">Comment faire pour que certains paragraphes seulement soient écrits d'une manière différente ?</a></li>
+	<li><a href="#">On change la taille du texte !</a></li>
+	<li><a href="#">La police</a></li>
+	<li><a href="#">L'alignement</a></li>
+	<li><a href="#">Les flottants</a></li>
+	<li><a href="#">Faire flotter une image</a></li>
+	<li><a href="#">Appliquer une image de fond</a></li>
+	<li><a href="#">Options disponibles pour l'image de fond</a></li>
+	<li><a href="#">Combiner les propriétés</a></li>
+	<li><a href="#">Plusieurs images de fond</a></li>
+	<li><a href="#">Au survol</a></li>
+	<li><a href="#">Au clic et lors de la sélection</a></li>
+	<li><a href="#">Lorsque le lien a déjà été consulté</a></li>
+	<li><a href="#">Bordures standard</a></li>
+	<li><a href="#">En haut, à droite, à gauche, en bas…</a></li>
+	<li><a href="#">Afficher un lien en gras quand on le survole</a></li>
+	<li><a href="#">:active : au moment du clic</a></li>
+	<li><a href="#">Les balises structurantes de HTML5</a></li>
+	<li><a href="#">Découvrez le modèle des boîtes</a></li>
+	<li><a href="#">Faites votre mise en page avec Flexbox</a></li>
+	<li><a href="#">Le positionnement flottant</a></li></ul>
+</nav>
 <h1>On va parler ici du CSS</h1>
 
 
 <p>La ligne de commande a placer dans un autre dossier enregistrer sous .css est:</p>
 <p>&lt;link rel="stylesheet" href="style.css" /&gt;</p>
 <p>Evidemment elle doit être enregistré sous le nom de: "style.css"</p>
+
 <h3>Colorer un titre ou un paragrâphe en bleue (ou autre...)</h3>
 <p>p<br />{Color: Blue}</p>
 <p>Pour paragraphe et </p>
@@ -105,7 +131,7 @@ body
 
 <h3>Options disponibles pour l'image de fond</h3>
 
-<p>On peut compléter la propriétébackground-imageque nous venons de voir par plusieurs autres propriétés qui permettent de changer le comportement de l'image de fond.<br />
+<p>On peut compléter la propriété background-imageque nous venons de voir par plusieurs autres propriétés qui permettent de changer le comportement de l'image de fond.<br />
 
 background-attachment: fixer le fond<br />
 La propriété CSSbackground-attachmentpermet de « fixer » le fond.<br /> L'effet obtenu est intéressant car on voit alors le texte « glisser » <br />par-dessus le fond. Deux valeurs sont disponibles :<br />
@@ -232,31 +258,62 @@ On peut indiquer une couleur en écrivant son nom en anglais (black, par exemple
 <p>Il est possible d'appliquer un style à un lien vers une page qui a déjà été vue. Par défaut, le navigateur colore le lien en un violet assez laid (de mon point de vue du moins !).<br />
 
 Vous pouvez changer cette apparence avec:visited (qui signifie « visité »). En pratique, sur les liens consultés, on ne peut pas changer beaucoup de choses à part la couleur (figure suivante).</p><br />
-<h3>En résumé</h3>
-<ul><li>En CSS, on peut modifier l'apparence de certaines sections dynamiquement, après le chargement de la page, lorsque certains évènements se produisent. On utilise pour cela les pseudo-formats.</li>
-<li>Le pseudo-format:hoverpermet de changer l'apparence au survol (par exemple :a:hoverpour modifier l'apparence des liens lorsque la souris pointe dessus).</li>
 
-<li>Le pseudo-format:active modifie l'apparence des liens au moment du clic,:visited lorsqu'un lien a déjà été visité.</li>
+<center><img src="images/résumé3.png" alt="résumé3" title="résumé3"/></center>
 
-<li>Le pseudo-format:focus permet de modifier l'apparence d'un élément sélectionné.</li></ul>
 <h3>Bordures standard</h3>
+
 <p>Le CSS vous offre un large choix de bordures pour décorer votre page. De nombreuses propriétés CSS vous permettent de modifier l'apparence de vos bordures :border-width, border-color, border-style…<br />
 	<p>La figure suivante vous présente les différents styles de bordures que vous pouvez utiliser.</p>
+
+	<center><img src="images/image_3.png" alt="image_3" title="image_3"/></center>
 	
+	<p>Exemple:</p>
+<center><img src="images/exemple.png" alt="exemple" title="exemple"/></center>
+
+<h3>En haut, à droite, à gauche, en bas…</h3>
+
+<p>Qui a dit que vous étiez obligé d'appliquer la même bordure aux quatre côtés de votre élément ?
+Taratata, si vous voulez mettre des bordures différentes en fonction du côté (haut, bas, gauche ou droite), vous pouvez le faire sans problème. Dans ce cas, vous devrez utiliser ces quatre propriétés :</p>
+
+<ul><li>border-top  : bordure du haut ;</li>
+	<li>border-bottom  : bordure du bas ;</li>
+	<li>border-left  : bordure de gauche ;</li>
+	<li>border-right  : bordure de droite.</li></ul>
+
+<center><img src="images/résumé4.png" alt="résumé4" title="résumé4"/></center>
+
 <h3>Afficher un lien en gras quand on le survole</h3>
 <p>a:hover <br />
 {<br />
  font-weight: bold;<br />
 }<br /></p>
+
+<h3>:active  : au moment du clic</h3>
+
+<p>Le pseudo-format :active  permet d'appliquer un style particulier au moment du clic. En pratique, il n'est utilisé que sur les liens.
+
+Le lien gardera cette apparence très peu de temps : en fait, le changement intervient lorsque le bouton de la souris est enfoncé. En clair, ce n'est pas forcément toujours bien visible.
+
+On peut par exemple changer la couleur de fond du lien lorsque l'on clique dessus :</p>
+
+<center><img src="images/image4.png" alt="image4" title="image4"/></center>
+
+<p>:focus  : lorsque l'élément est sélectionné
+Là, c'est un peu différent. Le pseudo-format :focus  applique un style lorsque l'élément est sélectionné.</p>
+
+<center><img src="images/résumé5.png" alt="résumé5" title="résumé5"/></center>
+
+
 <h3>Les balises structurantes de HTML5</h3>
 <p>&lt;header>: l'en-tête&gt;</p>
 	<p>&lt;footer>: le pied de page&gt;</p>
 
-<h3>&lt;nav>: principaux liens de navigation&gt;</h3>
+<p>&lt;nav>: principaux liens de navigation&gt;</p>
 
-	<p>La balise &lt;nav&gt; &lt;/nav> doit regrouper tous les principaux liens de navigation du site. Vous y placerez par exemple le menu principal de votre site.</p>
+	<p>La balise "&lt;nav&gt; &lt;/nav>" doit regrouper tous les principaux liens de navigation du site. Vous y placerez par exemple le menu principal de votre site.</p>
 
-<p>&lt;Généralement, le menu est réalisé sous forme de liste à puces à l'intérieur de la balise &lt;nav>:&gt;</p>
+<p>Généralement, le menu est réalisé sous forme de liste à puces à l'intérieur de la balise &lt;nav>:&gt;</p>
 <p>	Plusieurs balises ont été introduites avec HTML5 pour délimiter les différentes zones qui constituent la page web :</p>
 
 <ul><li>&lt;header>: en-tête ;</li>
@@ -275,10 +332,79 @@ Vous pouvez changer cette apparence avec:visited (qui signifie « visité »). E
 
 <p>Ces balises ne s'occupent pas de la mise en page. Elles servent seulement à indiquer à l'ordinateur le sens du texte qu'elles contiennent. On pourrait très bien placer l'en-tête en bas de la page si on le souhaite.<br /></p>
 <a id="haut"></a>
+
+<center><img src="images/image5.png" alt="image5" title="image5"/></center>
+
+<center><img src="images/résumé6.png" alt="résumé6" title="résumé6"/></center>
+
+<h3>Découvrez le modèle des boîtes</h3>
+
+<center><img src="images/résumé7.png" alt="résumé7" title="résumé7"/></center>
+
+<h3>Faites votre mise en page avec Flexbox</h3>
+
+<center><img src="images/résumé8.png" alt="résumé8" title="résumé8"/></center>
+
+<h3>Le positionnement flottant</h3>
+
+<center><img src="images/image10.png" alt="image10" title="image10"/></center>
+
+<center><img src="images/image11.png" alt="image11" title="image11"/></center>
+
+<p>Nous allons essayer de placer le menu à gauche et le reste du texte à droite. Pour cela, nous allons faire flotter le menu à gauche et laisser le reste du texte se placer à sa droite.<br />
+
+Nous voulons que le menu occupe 150 pixels de large. Nous allons aussi rajouter une bordure noire autour du menu et une bordure bleue autour du corps (à la balise &lt;section>  ) pour bien les distinguer :<p>
+
+<center><img src="images/image12.png" alt="image12" title="image12"/></center>
+
+<center><img src="images/image13.png" alt="image13" title="image13"/></center>
+<p>Il y a deux défauts (mis à part le fait que c'est encore bien moche) :</p>
+<ul><li>le texte du corps de la page touche la bordure du menu. Il manque une petite marge… ;</li>
+	<li>plus embêtant encore : la suite du texte passe… sous le menu !</li></ul>
+<p>On veut bien que le pied de page (« Copyright Zozor ») soit placé en bas sous le menu mais, par contre, on aimerait que tout le corps de page soit constitué d'un seul bloc placé à droite.<br />
+
+Pour résoudre ces deux problèmes d'un seul coup, il faut ajouter une marge extérieure à gauche de notre &lt;section>  , marge qui doit être par ailleurs supérieure à la largeur du menu. Si notre menu fait 150 px, nous allons par exemple donner une marge extérieure gauche de 170 px à notre section de page (figure suivante), ici à la ligne 10.</p>
+
+<center><img src="images/image14.png" alt="image14" title="image14"/></center>
+
+<center><img src="images/image15.png" alt="image15" title="image15"/></center>
+<p>Voilà, le contenu de la page est maintenant correctement aligné.</p>
+
+<h3>Transformez vos éléments avec display</h3>
+
+<p>Je vais vous apprendre ici à modifier les lois du CSS (brrr…). Accrochez-vous !<br />
+
+Il existe en CSS une propriété très puissante : display  . Elle est capable de transformer n'importe quel élément de votre page d'un type vers un autre. Avec cette propriété magique, je peux par exemple imposer à mes liens (originellement de type inline) d'apparaître sous forme de blocs :</p>
+
+<center><img src="images/image16.png" alt="image16" title="image16"/></center>
+<p>À ce moment-là, les liens vont se positionner les uns en-dessous des autres (comme des blocs normaux) et il devient possible de modifier leurs dimensions !<br />
+
+Voici quelques-unes des principales valeurs que peut prendre la propriété display  en CSS (il y en a encore d'autres) :</p>
+
+<center><img src="images/image17.png" alt="image17" title="image17"/></center>
+<h3>Le positionnement inline-block</h3>
+
+<p>Les manipulations que demande le positionnement flottant se révèlent parfois un peu délicates sur des sites complexes. Dès qu'il y a un peu plus qu'un simple menu à mettre en page, on risque d'avoir à recourir à des clear: both;  qui complexifient rapidement le code de la page.<br />
+
+Une meilleure technique consiste à transformer vos éléments en inline-block  avec la propriété display  .<br />
+
+Quelques petits rappels sur les éléments de type inline-block :<br /></p>
+
+<ul><li>ils se positionnent les uns à côté des autres (exactement ce qu'on veut pour placer notre menu et le corps de notre page !) ;</li>
+	<li>on peut leur donner des dimensions précises (là encore, exactement ce qu'on veut !).</li></ul>
+
+<p>Nous allons transformer en inline-block les deux éléments que nous voulons placer côte à côte : le menu de navigation et la section du centre de la page.</p>
+<center><img src="images/image18.png" alt="image18" title="image18"/></center>
+<center><img src="images/image19.png" alt="image19" title="image19"/></center>
+
+
+
+
+
+
+
+
 <a href="#haut">haut de page</a>
-
-
-
 
 
 </html>
