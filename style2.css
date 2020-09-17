@@ -20,21 +20,39 @@ p
 {color: white;
 text-align: center;
  font-size: 20px; 
-{font-family: sans-serif;}}
+font-family: sans-serif;}
 
 ul
 {color: white;
 text-align: center;
  font-size: 20px; 
-{font-family: sans-serif;}}
+font-family: sans-serif;}
 
 ol
 {color: white;
 text-align: center;
  font-size: 20px; 
-{font-family: sans-serif;}}
+font-family: sans-serif;}
+
+li
+{color: white;
+text-align: center;
+ font-size: 20px; 
+font-family: sans-serif;}
 
 body
 {background-image: url("images/pop.jpg");
 background-attachment: fixed;}
 
+
+nav
+{display: inline-block;
+width: 150px;}
+
+section
+{display: inline-block;
+width: 250px;}
+
+a
+{display: inline-block;
+width: 250px;}
