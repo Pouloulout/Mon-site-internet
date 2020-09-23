@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" type="text/css">
 <head>
 <title>Bienvenue sur la page 2 !</title>
 <link rel="stylesheet" href="style2.css" />
 </head>
 
-<nav>
+
+
+<header><nav><p class="Sommaire">Sommaire</p>
 	<ul><li><a href="#">On va parler ici du CSS</a></li>
 	<li><a href="#">Colorer un titre ou un paragrâphe en bleue (ou autre...)</a></li>
 	<li><a href="#">Comment faire pour que certains paragraphes seulement soient écrits d'une manière différente ?</a></li>
@@ -29,8 +31,8 @@
 	<li><a href="#">Découvrez le modèle des boîtes</a></li>
 	<li><a href="#">Faites votre mise en page avec Flexbox</a></li>
 	<li><a href="#">Le positionnement flottant</a></li></ul>
-</nav>
-<h1>On va parler ici du CSS</h1>
+</nav></header>
+<section><aside><h1>On va parler ici du CSS</h1>
 
 
 <p>La ligne de commande a placer dans un autre dossier enregistrer sous .css est:</p>
@@ -394,11 +396,301 @@ Quelques petits rappels sur les éléments de type inline-block :<br /></p>
 	<li>on peut leur donner des dimensions précises (là encore, exactement ce qu'on veut !).</li></ul>
 
 <p>Nous allons transformer en inline-block les deux éléments que nous voulons placer côte à côte : le menu de navigation et la section du centre de la page.</p>
+
 <center><img src="images/image18.png" alt="image18" title="image18"/></center>
 <center><img src="images/image19.png" alt="image19" title="image19"/></center>
 
+<h3>Les positionnements absolu, fixe et relatif</h3>
+
+<p>Il existe d'autres techniques un peu particulières permettant de positionner avec précision des éléments sur la page :</p>
+
+<ul><li>le positionnement absolu : il nous permet de placer un élément n'importe où sur la page (en haut à gauche, en bas à droite, tout au centre, etc.) ;</li>
+	<li>le positionnement fixe : identique au positionnement absolu mais, cette fois, l'élément reste toujours visible, même si on descend plus bas dans la page. C'est un peu le même principe que background-attachment: fixed;  (si vous vous en souvenez encore) ;</li>
+	<li>le positionnement relatif : permet de décaler l'élément par rapport à sa position normale.</li>
+
+<center><img src="images/image20.png" alt="image20" title="image20"/></center>
+
+<p>Il faut d'abord faire son choix entre les trois modes de positionnement disponibles. Pour cela, on utilise la propriété CSS position  , à laquelle on donne une de ces valeurs :</p>
+
+<ul><li>absolute  : positionnement absolu ;</li>
+	<li>fixed  : positionnement fixe ;</li>
+	<li>relative  : positionnement relatif.</li></ul>
+
+	<p>Nous allons étudier un à un chacun de ces positionnements.</p>
+
+<h2>Le positionnement absolu</h2>
+
+<p>Le positionnement absolu permet de placer un élément (réellement) n'importe où sur la page. Pour effectuer un positionnement absolu, on doit écrire :</p>
+
+<center><img src="images/image21.png" alt="image21" title="image21"/></center>
+<p>Mais cela ne suffit pas ! On a dit qu'on voulait un positionnement absolu, mais encore faut-il dire où l'on veut que le bloc soit positionné sur la page.<br />
+Pour ce faire, on va utiliser quatre propriétés CSS :</p>
+
+<ul><li>left  : position par rapport à la gauche de la page ;</li>
+	<li>right  : position par rapport à la droite de la page ;</li>
+	<li>top  : position par rapport au haut de la page ;</li>
+	<li>bottom  : position par rapport au bas de la page.</li></ul>
+
+<p>On peut leur donner une valeur en pixels, comme 14 px, ou bien une valeur en pourcentage, comme 50 %.<br />
+
+Si ce n'est pas très clair pour certains d'entre vous, la figure suivante devrait vous aider à comprendre.</p>
 
 
+<center><img src="images/image22.png" alt="image22" title="image22"/></center>
+
+<p>Avec cela, vous devriez être capable de positionner correctement votre bloc.<br />
+
+Il faut donc utiliser la propriété position  et au moins une des quatre propriétés ci-dessus ( top  , left  , right  ou bottom  ). Si on écrit par exemple :</p>
+
+<center><img src="images/image23.png" alt="image23" title="image23"/></center>
+
+<p>… cela signifie que le bloc doit être positionné tout en bas à droite (0 pixel par rapport à la droite de la page, 0 par rapport au bas de la page).<br />
+
+Si on essaie de placer notre bloc &lt;nav>  en bas à droite de la page, on obtient le même résultat qu'à la figure suivante.</p>
+
+<center><img src="images/image24.png" alt="image24" title="image24"/></center>
+
+<p>On peut bien entendu ajouter une marge intérieure (padding) au menu pour qu'il soit moins collé à sa bordure.<br />
+
+Les éléments positionnés en absolu sont placés par-dessus le reste des éléments de la page ! Par ailleurs, si vous placez deux éléments en absolu vers le même endroit, ils risquent de se chevaucher. Dans ce cas, utilisez la propriété z-index  pour indiquer quel élément doit apparaître au-dessus des autres.</p>
+
+<center><img src="images/image25.png" alt="image25" title="image25"/></center>
+
+<p>L'élément ayant la valeur de z-index  la plus élevée sera placé par-dessus les autres, comme le montre la figure suivante.</p>
+
+
+<center><img src="images/image26.png" alt="image26" title="image26"/></center>
+
+<center><img src="images/image27.png" alt="image27" title="image27"/></center>
+
+<h2>Le positionnement fixe</h2>
+
+<p>Le principe est exactement le même que pour le positionnement absolu sauf que, cette fois, le bloc reste fixe à sa position, même si on descend plus bas dans la page.</p>
+
+<center><img src="images/image28.png" alt="image28" title="image28"/></center>
+<p>Essayez d'observer le résultat, vous verrez que le menu reste dans le cas présent affiché en bas à droite même si on descend plus bas dans la page (figure suivante).</p>
+
+<center><img src="images/image29.png" alt="image29" title="image29"/></center>
+
+<h2>Le positionnement relatif</h2>
+
+<p>Plus délicat, le positionnement relatif peut vite devenir difficile à utiliser. Ce positionnement permet d'effectuer des « ajustements » : l'élément est décalé par rapport à sa position initiale.<br />
+
+Prenons par exemple un texte important, situé entre deux balises <strong>  . Pour commencer, je le mets sur fond rouge pour qu'on puisse mieux le repérer :</p>
+
+<center><img src="images/image30.png" alt="image30" title="image30"/></center>
+<p>Cette fois, le schéma que je vous ai montré tout à l'heure pour les positions absolue et fixe ne marche plus. Pourquoi ? Parce que l'origine a changé : le point de coordonnées (0, 0) ne se trouve plus en haut à gauche de votre fenêtre comme c'était le cas tout à l'heure. Non, cette fois l'origine se trouve en haut à gauche… de la position actuelle de votre élément.<br />
+
+Tordu, n'est-ce pas ? C'est le principe de la position relative. Le schéma en figure suivante devrait vous aider à comprendre où se trouve l'origine des points.</p>
+
+<center><img src="images/image31.png" alt="image31" title="image31"/></center>
+
+<p>Donc, si vous faites un position: relative;  et que vous appliquez une des propriétés top  , left  , right  ou bottom  , le texte sur fond rouge va se déplacer par rapport à la position où il se trouve.<br />
+
+Prenons un exemple : je veux que mon texte se décale de 55 pixels vers la droite et de 10 pixels vers le bas. Je vais donc demander à ce qu'il soit décalé de 55 pixels par rapport au « bord gauche » et de 10 pixels par rapport au « bord haut » (lignes 6 à 8) :</p>
+
+<center><img src="images/image32.png" alt="image32" title="image32"/></center>
+<p>Le texte est alors décalé par rapport à sa position initiale, comme illustré à la figure suivante.</p>
+
+<center><img src="images/image33.png" alt="image33" title="image33"/></center>
+
+<center><img src="images/résumé9.png" alt="résumé9" title="résumé9"/></center>
+
+<h3>Créez un site pas à pas</h3>
+
+<h2>Maquettage du design</h2>
+
+<p>Je vois d'ici le tableau. Vous vous dites « Chouette, on va créer un site complet », vous ouvrez votre éditeur de texte et vous me regardez en me demandant « Bon, par quelle ligne de code on commence ? ».<br />
+
+Et là, je dois justement vous arrêter. Prenez un crayon et un papier : il faut d'abord réfléchir à ce que vous voulez créer comme site. De quoi va-t-il parler ? Avez-vous un thème, un objectif ?<br />
+
+Je sais, par expérience, que la plupart d'entre vous « cherchent juste à apprendre » pour le moment. Vous n'avez donc peut-être pas encore d'idée précise en tête. Dans ce cas, je vous suggère de créer un site pour vous présenter, pour assurer votre présence sur le Web : ce site parlera de vous, il y aura votre CV, vos futures réalisations et pourquoi pas votre blog.<br />
+
+En ce qui me concerne, dans ce TP, je vais réaliser le site web de notre ami Zozor. Zozor a décidé de partir en voyage à travers le monde et sa première étape sera… San Francisco ! Il veut donc créer un site web pour qu'on le connaisse et pour qu'on suive son périple à travers le monde.</p>
+
+
+<h2>Organiser le contenu en HTML</h2>
+
+<p>La première chose à faire est de distinguer les principaux blocs sur la maquette. Ces blocs vont constituer le squelette de notre page.<br />
+
+Pour créer ce squelette, nous allons utiliser différentes balises HTML :</p>
+
+<ul><li>les balises structurantes de HTML5, que nous connaissons : &lt;header>  , &lt;section>  , &lt;nav>  ,   etc. ;</li>
+	<li>la balise universelle &lt;div>  quand aucune balise structurante ne convient.</li></ul>
+
+<center><img src="images/image34.png" alt="image34" title="image34"/></center>
+<p>C'est à vous de décider. De préférence, utilisez une balise qui a du sens (comme les balises structurantes &ltheader>  , &ltsection>  , &ltnav>) ; mais si aucune balise ne vous semble mieux convenir, optez pour la balise générique &ltdiv>  .<br />
+
+Regardez la figure suivante pour voir ce que je vous propose comme structure.</p>
+
+<center><img src="images/image35.png" alt="image35" title="image35"/></center>
+
+<p>On peut imaginer d'autres façons de faire le découpage, retenez bien que ma proposition n'est pas forcément la seule et unique solution !</p>
+
+<p>Toutes les balises que l'on va utiliser n'apparaissent pas sur cette maquette, mais cela vous permet d'avoir une idée de l'imbrication que je propose pour les éléments.<br />
+
+Le HTML n'est pas vraiment la partie complexe de la réalisation du site web. En fait, si vous avez bien compris comment imbriquer des balises, vous ne devriez pas avoir de mal à réaliser un code approchant du mien :</p>
+
+<center><img src="images/image36.png" alt="image36" title="image36"/></center>
+<center><img src="images/image37.png" alt="image37" title="image37"/></center>
+<center><img src="images/image38.png" alt="image38" title="image38"/></center>
+
+<p>Petite particularité : comme vous le voyez, tout le contenu de la page est placé dans une grande balise &ltdiv>  ayant pour  id  bloc_page  (on l'appelle aussi parfois main_wrapper  en anglais). Cette balise englobe tout le contenu, ce qui va nous permettre de fixer facilement les dimensions de la page et de centrer notre site à l'écran.<br />
+
+Pour le reste, aucune grosse difficulté à signaler. Notez que je n'ai pas forcément pensé à toutes les balises du premier coup : en réalisant le design en CSS, il m'est parfois apparu qu'il était nécessaire d'englober une partie des balises d'un bloc &ltdiv>  pour m'aider dans la réalisation du design.<br />
+
+Pour le moment, comme vous vous en doutez, le site web n'est pas bien beau (et encore, je suis gentil). Vous pouvez voir le résultat actuel à la figure suivante.<br /></p>
+
+<center><img src="images/image39.png" alt="image39" title="image39"/></center>
+<p>C'est en CSS que la magie va maintenant opérer.</p>
+
+<h2>Mettre en forme en CSS</h2>
+
+<p>Les choses se compliquent un peu plus lorsqu'on arrive au CSS. En effet, il faut du travail (et parfois un peu d'astuce) pour obtenir un résultat se rapprochant de la maquette. Je dis bien « se rapprochant », car vous ne pourrez jamais obtenir un résultat identique au pixel près.<br />
+
+Mettez-vous bien cela en tête : le but est d'obtenir le rendu le plus proche possible, sans chercher la perfection. Même si vous obtenez selon vous « la perfection » sur un navigateur, vous pouvez être sûr qu'il y aura des différences sur un autre navigateur (plus ancien) ou sur une autre machine que la vôtre. Nous allons donc faire au mieux et ce sera déjà du travail, vous verrez.<br />
+
+Pour mettre en forme le design, je vais procéder en plusieurs étapes. Je vais m'occuper des éléments suivants, dans cet ordre :<br /></p>
+
+<ol><li>Polices personnalisées.</li>
+
+<li>Définition des styles principaux de la page (largeur du site, fond, couleur par défaut du texte).</li>
+
+<li>En-tête et liens de navigation.</li>
+
+<li>Bannière (représentant le pont de San Francisco).</li>
+
+<li>Section principale du corps de page, au centre.</li>
+
+<li>Pied de page (footer).</li>
+
+
+<h2>Définition des styles principaux</h2>
+
+<p>On peut maintenant s'attaquer à définir quelques styles globaux pour tout le design de notre page. On va définir une image de fond, une police et une couleur de texte par défaut, et surtout on va dimensionner notre page et la centrer à l'écran.</p>
+
+
+<center><img src="images/image40.png" alt="image40" title="image40"/></center>
+
+
+<p>Avec #bloc_page  , le bloc qui englobe toute la page, j'ai fixé les limites à 900 pixels de large. Avec les marges automatiques, le design sera centré.</p>
+
+<center><img src="images/image40.png" alt="image40" title="image40"/></center>
+
+<p>J'ai utilisé la propriété CSS text-transform: uppercase;  (que nous n'avons pas vue auparavant) pour faire en sorte que mes titres soient toujours écrits en majuscules. Cette propriété transforme en effet le texte en majuscules (elle peut aussi faire l'inverse avec lowercase  ). Notez qu'on aurait aussi pu écrire les titres directement en majuscules dans le code HTML.
+
+La figure suivante vous montre ce qu'on obtient pour le moment avec le code CSS. On est encore loin du résultat final, mais on se sent déjà un petit peu plus « chez soi ».
+
+<center><img src="images/image42.png" alt="image42" title="image42"/></center>
+
+<h2>En-tête et liens de navigation</h2>
+
+<p>D'après la structure que j'ai proposée, l'en-tête contient aussi les liens de navigation. Commençons par définir l'en-tête et, en particulier, le logo en haut à gauche. Nous verrons ensuite comment mettre en forme les liens de navigation.</p>
+
+<h2>L'en-tête</h2>
+
+<center><img src="images/image43.png" alt="image43" title="image43"/></center>
+
+
+<p>Nous créons une distinction entre l'en-tête et le corps de page grâce à une image de fond. Les éléments sont positionnés avec Flexbox : il y a plusieurs niveaux d'imbrication, certains sont positionnés verticalement, d'autres horizontalement. Nous personnalisons aussi les polices et les dimensions.</p>
+
+<h2>Les liens de navigation</h2>
+
+
+<center><img src="images/image44.png" alt="image44" title="image44"/></center>
+
+
+<p>La principale nouveauté est la définition CSS list-style-type: none;  , qui permet de retirer l'image ronde servant de puce. Chaque élément de la liste ( &lt;li>  ) est positionné dans une Flexbox, ce qui nous permet de placer les liens côte à côte comme nous le souhaitions.<br />
+
+Le reste des définitions ne contient rien d'extraordinaire : des dimensions, des couleurs, des bordures… Autant de choses que vous connaissez déjà. Notez que je ne trouve pas forcément les bonnes valeurs du premier coup, il me faut parfois tâtonner un peu pour trouver une apparence proche de la maquette d'origine.<br />
+
+La figure suivante représente le résultat que nous obtenons avec les derniers ajouts de CSS.</p>
+
+
+<center><img src="images/image45.png" alt="image45" title="image45"/></center>
+
+<h2>La bannière</h2>
+
+
+<p>Bien, passons maintenant à un exercice un peu plus difficile mais très intéressant : la bannière ! Notre maquette comporte une jolie bannière représentant le pont de San Francisco. Cette bannière, sur votre site, peut être amenée à évoluer. Ici, elle peut servir à illustrer, par exemple, le dernier billet de blog de notre ami Zozor, qui vient de visiter San Francisco.<br />
+
+La bannière est intéressante à plus d'un titre :</p>
+
+
+<ul><li>elle comporte des angles arrondis ;</li>
+	<li>la description est écrite sur un fond légèrement transparent ;</li>
+	<li>le bouton « Voir l'article » est réalisé en CSS, avec des angles arrondis ;</li>
+	<li>une ombre vient donner du volume à la bannière.</li></ul>
+
+
+<p>Voici le code que j'ai utilisé pour réaliser toute la bannière :</p>
+
+
+<center><img src="images/image46.png" alt="image46" title="image46"/></center>
+
+
+<center><img src="images/image47.png" alt="image47" title="image47"/></center>
+
+<p>Ce code est assez technique et riche en fonctionnalités CSS. C'est peut-être la partie la plus délicate à réaliser dans cette page.<br />
+
+Vous pouvez constater que j'ai choisi d'afficher l'image du pont sous forme d'image de fond dans le bloc &lt;div>  de la bannière.<br />
+
+J'ai aussi donné une position relative à la bannière, sans utiliser de propriétés pour en modifier le décalage… Pourquoi ? A priori, une position relative sans décalage ne sert à rien… Et pourtant, cela m'a été particulièrement utile pour placer le bouton « Voir l'article » en bas à droite de la bannière. En effet, j'ai placé le bouton en absolu à l'intérieur.<br />
+
+Le bouton ne devrait-il pas se placer en bas à droite de la page ?<br />
+
+Non, souvenez-vous ce que je vous avais dit : si un bloc est positionné en absolu dans un autre bloc lui-même positionné en absolu, fixe ou relatif, alors il se positionne à l'intérieur de ce bloc.
+Notre bannière est positionnée en relatif (sans décalage). Comme le bouton est positionné en absolu à l'intérieur, il se place donc en bas à droite de la bannière !<br />
+
+C'est une technique particulièrement utile et puissante dans la réalisation d'un design, souvenez-vous-en !<br />
+
+Dernier détail : pour la légende de la bannière, j'ai choisi d'utiliser la transparence avec la notation RGBa  plutôt que la propriété opacity  . En effet, opacity  aurait rendu tout le contenu du bloc transparent, y compris le bouton « Voir l'article » à l'intérieur. J'ai trouvé préférable de rendre transparente seulement la couleur de fond plutôt que tout le bloc.<br />
+
+Le résultat est plutôt sympathique (figure suivante).</p>
+
+
+<center><img src="images/image48.png" alt="image48" title="image48"/></center>
+
+
+<center><img src="images/image49.png" alt="image49" title="image49"/></center>
+
+
+<h2>Le corps</h2>
+
+<p>Le corps, au centre de la page, est dans notre cas constitué d'une unique balise &lt;section>  (mais il pourrait y en avoir plusieurs, bien sûr).<br />
+
+Le positionnement du bloc « À propos de l'auteur » se fait grâce à Flexbox. J'ai choisi de répartir la taille des éléments avec la propriété flex  , ce qui permet à l'article et au bloc sur le côté d'équilibrer leurs largeurs.<br />
+
+On joue avec les angles arrondis et les ombres, on ajuste un peu les marges et les dimensions du texte, et nous y voilà !</p>
+
+
+<center><img src="images/image50.png" alt="image50" title="image50"/></center>
+
+<center><img src="images/image51.png" alt="image51" title="image51"/></center>
+
+
+<p>La petite difficulté ici était de réussir à placer la flèche à gauche du bloc &lt;aside>  « À propos de l'auteur »,  pour donner l'effet d'une bulle. Là encore, notre meilleur ami est le positionnement absolu. La technique est la même : je positionne le bloc &lt;aside>  en relatif (sans effectuer de décalage), ce qui me permet ensuite de positionner l'image de la flèche en absolu par rapport au bloc &lt;aside>  (et non par rapport à la page entière). En jouant sur le décalage de l'image, je peux la placer avec précision où je veux, au pixel près (figure suivante) !</p>
+
+
+<center><img src="images/image53.png" alt="image53" title="image53"/></center>
+
+<h2>Le pied de page</h2>
+
+<p>Il ne nous reste plus que le pied de page à mettre en forme. Celui-ci est constitué de trois sous-blocs que j'ai matérialisés par des &ltdiv>  auxquels j'ai donné des id  pour mieux les repérer. Ces blocs sont positionnés, grâce à une Flexbox, les uns à côté des autres.</p>
+
+<center><img src="images/image54.png" alt="image54" title="image54"/></center>
+
+<center><img src="images/image55.png" alt="image55" title="image55"/></center>
+
+<p>Deux petites particularités à signaler sur le pied de page :<br />
+
+j'ai utilisé la fonctionnalité des images de fond multiples de CSS3, ce qui m'a permis de réaliser le séparateur entre le corps et le pied de page. Il est constitué de trois images : le séparateur, la petite flèche vers le haut et un léger dégradé ;<br />
+
+j'ai modifié la puce de la liste « Mes amis », en bas à droite, avec la propriété list-style-image  qui m'a permis d'utiliser une image personnalisée plutôt que les puces standard. Il existe de nombreuses propriétés CSS spécifiques comme celle-ci et nous ne pouvons pas toutes les voir une par une dans ce cours mais, maintenant que vous êtes un habitué du CSS, vous n'aurez aucun mal à apprendre à les utiliser simplement en lisant <a href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3/1608902-memento-des-proprietes-css">l'annexe listant les principales propriétés CSS.</a><br />
+
+Et voilà, notre design est terminé (figure suivante) !</p>
+
+<center><img src="images/image56.png" alt="image56" title="image56"/></center>
 
 
 
@@ -406,6 +698,6 @@ Quelques petits rappels sur les éléments de type inline-block :<br /></p>
 
 <a href="#haut">haut de page</a>
 
-
+</aside></section>
 </html>
 
